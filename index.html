@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analogue Clock with Realistic Second Hand</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="clockCanvas"></canvas>
+
+    <script src="clock.js"></script>
+    <script>
+      // Ensure the DOM is fully loaded before initializing the clock
+      document.addEventListener("DOMContentLoaded", () => {
+        const clockCanvas = document.getElementById("clockCanvas");
+
+        // Set canvas dimensions (can be dynamic or responsive based on needs)
+        // For this example, we'll use a fixed size.
+        const canvasSize = Math.min(
+          window.innerWidth * 0.8,
+          window.innerHeight * 0.8,
+          500
+        );
+        clockCanvas.width = canvasSize;
+        clockCanvas.height = canvasSize;
+
+        const myClock = new AnalogueClock("clockCanvas", {
+          // Example custom configurations (uncomment to try):
+          // dialColor: '#F0F8FF', // AliceBlue
+          // borderColor: '#4682B4', // SteelBlue
+          // secondHandColor: '#DC143C', // Crimson
+          // numeralFont: 'Georgia, serif',
+          // showMinorTicks: false,
+          // hourHandWidth: 8,
+          // minuteHandWidth: 6,
+          // secondHandWidth: 3,
+          secondHandPhysics: {
+            creepDurationMs: 150,
+            creepAngleDegrees: 2,
+            overshootDegrees: 2,
+            recoilDegrees: -1.5,
+            motionBlurStrength: 12,
+          },
+        });
+        myClock.start();
+
+        // Optional: Stop the clock (e.g., if the element is removed or page is hidden)
+        // setTimeout(() => myClock.stop(), 60000); // Stop after 1 minute for demo
+      });
+    </script>
+  </body>
+</html>

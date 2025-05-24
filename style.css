@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e0e0e0; /* A slightly different background for contrast */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#clockCanvas {
+  display: block; /* Removes extra space below canvas if body is flex container */
+  /* The border is defined by the clock's drawing logic if borderWidth > 0 */
+  /* Example: add a CSS shadow to the canvas itself for an outer effect */
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); */
+  /* border-radius: 50%; /* If you want the canvas element to be circular shaped */
+}
