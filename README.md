@@ -1,5 +1,7 @@
 An analogue clock component with realistic second hand physics.
 
+View an example [here](https://easleydp.github.io/analogue-clock/).
+
 ## **Core Features:**
 
 1. **Realistic Second Hand Physics:**
