@@ -46,9 +46,9 @@ class AnalogueClock {
     secondHandWidth: 2, // pixels
     secondHandCounterWeightLength: 0.15, // as fraction of clock radius for counterweight
     secondHandPhysics: {
-      creepDurationMs: 300,
+      creepDurationMs: 150,
       creepAngleDegrees: 2,
-      overshootDegrees: 3,
+      overshootDegrees: 2,
       recoilDegrees: -1.5,
       motionBlurStrength: 12, // Custom: Strength of the motion blur effect
     },
@@ -198,14 +198,8 @@ class AnalogueClock {
     const currentMilliseconds = now.getMilliseconds();
 
     // Calculate smooth hand angles
-    const hourAngle =
-      (((currentHours % 12) + currentMinutes / 60 + currentSeconds / 3600) /
-        12) *
-      360;
-    const minuteAngle =
-      ((currentMinutes + currentSeconds / 60 + currentMilliseconds / 60000) /
-        60) *
-      360;
+    const hourAngle = (((currentHours % 12) + currentMinutes / 60) / 12) * 360;
+    const minuteAngle = ((currentMinutes + currentSeconds / 60) / 60) * 360;
 
     // --- SECOND HAND PHYSICS LOGIC ---
     const newSecondDetected = currentSeconds !== this.lastSystemSecond;

@@ -1,12 +1,11 @@
 An analogue clock component with realistic second hand physics.
-
 View an example [here](https://easleydp.github.io/analogue-clock/).
 
 ## **Core Features:**
 
 1. **Realistic Second Hand Physics:**
 
-   - **Anticipatory Creep**: The second hand begins to move forward ~300ms before each tick
+   - **Anticipatory Creep**: The second hand begins to move forward ~150ms before each tick
    - **Overshoot**: Upon each tick, the hand jumps past the target position
    - **Recoil**: The hand then bounces back, undershooting slightly
    - **Settle**: Finally settles into the correct position
@@ -35,8 +34,8 @@ View an example [here](https://easleydp.github.io/analogue-clock/).
 The second hand follows a precise 4-state animation cycle:
 
 - **SETTLED**: Hand rests at the correct second position
-- **CREEPING**: 300ms before next tick, hand creeps forward 2°
-- **OVERSHOOT**: At tick, hand jumps 3° past target with blur effect
+- **CREEPING**: 150ms before next tick, hand creeps forward 2°
+- **OVERSHOOT**: At tick, hand jumps 2° past target with blur effect
 - **RECOIL**: Hand bounces back 1.5° behind target, then settles
 
 ## **Technical Highlights:**
